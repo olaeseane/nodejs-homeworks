@@ -1,15 +1,22 @@
 const http = require('http');
 const port = 3000;
 
+
+console.log(process.env.INTERVAL);
+console.log(process.env.TIMEOUT);
+
+const interval = process.env.INTERVAL || 1000;
+const timeout = process.env.TIMEOUT || 10000;
+
 const logUTCTime = () => {
   return new Promise((resolve) => {
     const intervalID = setInterval(() => {
       console.log(new Date(Date.now()).toUTCString());
-    }, 1000);
+    }, interval);
     setTimeout(() => {
       clearInterval(intervalID);
       resolve(new Date(Date.now()).toUTCString());
-    }, 10000);
+    }, timeout);
   });
 };
 

@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "hw#2": "set INTERVAL=1000&& set TIMEOUT=10000&& nodemon 02_1.js"
+  },
   "devDependencies": {
     "eslint": "^5.9.0",
     "eslint-config-standard": "^12.0.0",
