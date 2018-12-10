@@ -5,7 +5,7 @@
   "license": "ISC",
   "scripts": {
     "start": "set NODE_ENV=development&& gulp",
-    "server": "set PORT=3003&& nodemon app.js",
+    "server": "set PORT=3003&& nodemon --ignore ./db/db.json app.js",
     "build": "set NODE_ENV=production&& gulp build"
   },
   "dependencies": {

@@ -1,6 +1,9 @@
 {
   "messages": [],
-  "login": {},
+  "login": {
+    "email": "test@test.test",
+    "password": "test"
+  },
   "skills": [],
   "goods": []
 }
