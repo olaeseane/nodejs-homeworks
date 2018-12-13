@@ -4,9 +4,7 @@
   "author": "krabaton",
   "license": "ISC",
   "scripts": {
-    "start": "set NODE_ENV=development&& gulp",
-    "server": "set PORT=3003&& nodemon --ignore ./db/db.json app.js",
-    "build": "set NODE_ENV=production&& gulp build"
+    "start": "set PORT=3003&& nodemon --ignore ./db/db.json app.js"
   },
   "dependencies": {
     "body-parser": "^1.18.3",

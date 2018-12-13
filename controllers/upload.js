@@ -5,8 +5,6 @@ const db = require('../models/db');
 
 module.exports = (req, res, next) => {
   const form = new formidable.IncomingForm();
-
-  const uploadDir = path.join('./public', 'upload');
   if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir);
   form.uploadDir = path.join(process.cwd(), uploadDir);
 
@@ -26,9 +24,8 @@ module.exports = (req, res, next) => {
         console.error(err.message);
         return;
       }
-      const fileDir = fileName.substr(fileName.indexOf('\\'));
-      db.get('goods')
-        .push({ name: fields.name, price: fields.price, path: fileDir })
+      db.get('products')
+        .push({ name: fields.name, price: fields.price, path: path.join('upload', files.photo.name) })
         .write();
       req.flash('msgfile', 'Картинка успешно загружена');
       res.redirect('/admin');
